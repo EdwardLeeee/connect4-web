@@ -152,6 +152,8 @@ function handleClick(col) {
     }
 }
 
+
+
 document.getElementById('restart-button').addEventListener('click', () => {
     board = createBoard();
     currentPlayer = PLAYER1;
@@ -160,3 +162,4 @@ document.getElementById('restart-button').addEventListener('click', () => {
 });
 
 drawBoard(board);
+

@@ -1,4 +1,8 @@
 /* 優化背景顏色與按鈕樣式 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #282c34;
     color: #fff;
