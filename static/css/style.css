@@ -1,0 +1,100 @@
+/* 優化背景顏色與按鈕樣式 */
+body {
+    background-color: #282c34;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 調整按鈕樣式 */
+#restart-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: #282c34;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #21a1f1;
+}
+
+/* 調整棋盤格子的樣式 */
+.cell {
+    width: 100%; 
+    padding-bottom: 100%; /* 使格子成為正方形 */
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: relative; /* 為相對位置定位 */
+}
+
+.cell .piece {
+    width: 80%;
+    height: 80%;
+    background-color: transparent; /* 默認為透明 */
+    border-radius: 50%;
+    position: absolute;
+    top: 10%; /* 保持棋子在格子內居中 */
+    left: 10%;
+}
+
+/* 不同玩家的棋子顏色 */
+.cell .player1 {
+    background-color: #ff4500; /* 玩家1的棋子顏色 */
+}
+
+.cell .player2 {
+    background-color: #1e90ff; /* 玩家2的棋子顏色 */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 使用自適應的列寬 */
+    grid-template-rows: repeat(6, 1fr); /* 使用自適應的行高 */
+    gap: 5px; /* 增加格子之間的間距 */
+    width: 70vw; /* 使整個棋盤寬度佔據視口的 70% */
+    max-width: 500px; /* 設置棋盤最大寬度 */
+    margin-bottom: 20px;
+}
+
+/* 響應式設計 */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(7, 40px);
+        grid-template-rows: repeat(6, 40px);
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cell .piece {
+        width: 80%;
+        height: 80%;
+    }
+
+    #restart-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+/* X 标记样式 */
+.x-mark {
+    font-size: 2em;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
